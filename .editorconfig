@@ -448,3 +448,25 @@ dotnet_naming_rule.parameters_rule.severity             = warning
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 # OTHER DEALINGS IN THE SOFTWARE.
 ##########################################
+
+# Custom Jyske Finans overrides
+[*.{cs,cshtml}]
+max_line_length = 160
+
+
+[*.{cs,csx,cake}]
+dotnet_diagnostic.CA1848.severity = none
+
+csharp_style_expression_bodied_methods = false:warning
+csharp_style_expression_bodied_constructors = false:warning
+
+csharp_place_simple_initializer_on_single_line = false
+csharp_max_initializer_elements_on_line = 1
+csharp_place_attribute_on_same_line = never
+csharp_wrap_chained_method_calls = chop_if_long
+
+# Settings making project format apply to existing formatting
+csharp_keep_user_linebreaks = false
+csharp_keep_existing_arrangement = false
+csharp_keep_existing_initializer_arrangement = false
+csharp_keep_existing_linebreaks = false
