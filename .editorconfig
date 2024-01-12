@@ -453,6 +453,8 @@ dotnet_naming_rule.parameters_rule.severity             = warning
 [*.{cs,cshtml}]
 max_line_length = 160
 
+# Avoid suggesting [.. ] instead of .ToArray
+dotnet_diagnostic.IDE0305.severity = none 
 
 [*.{cs,csx,cake}]
 dotnet_diagnostic.CA1848.severity = none
