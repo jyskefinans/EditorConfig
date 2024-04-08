@@ -454,7 +454,7 @@ dotnet_naming_rule.parameters_rule.severity             = warning
 max_line_length = 160
 
 # Avoid suggesting [.. ] instead of .ToArray
-dotnet_diagnostic.IDE0305.severity = none 
+#dotnet_diagnostic.IDE0305.severity = none # We would like new project to utilize the [.. ] syntax.
 
 [*.{cs,csx,cake}]
 dotnet_diagnostic.CA1848.severity = none
