@@ -474,3 +474,18 @@ csharp_keep_user_linebreaks = false
 csharp_keep_existing_arrangement = false
 csharp_keep_existing_initializer_arrangement = false
 csharp_keep_existing_linebreaks = false
+
+# Enums must not make warnings when using screaming snake case 🐍
+# Define the symbol group for enum members
+dotnet_naming_symbols.enum_members.applicable_kinds = enum_member
+dotnet_naming_symbols.enum_members.applicable_accessibilities = *
+dotnet_naming_symbols.enum_members.required_modifiers =
+# Define a naming style that uses all upper-case letters with underscores
+dotnet_naming_style.all_upper_with_underscores.capitalization = all_upper
+dotnet_naming_style.all_upper_with_underscores.word_separator = _
+# Define a naming rule that applies the above style to enum members, and set its severity to none
+dotnet_naming_rule.enum_members_allow_underscores.symbols = enum_members
+dotnet_naming_rule.enum_members_allow_underscores.style = all_upper_with_underscores
+dotnet_naming_rule.enum_members_allow_underscores.severity = none
+[**/*[eE]num**.cs] # CA1707 applies to all identifiers regardless of whether they’re in enums, classes, etc. We try to target only enum files by their common path (not perfect but it works)
+dotnet_diagnostic.CA1707.severity = none # Despite doing the above expicit configuration the CA1707 was still affecting the snake cased enums.
